@@ -11,5 +11,13 @@ app.get('/status', (req, res) => {
   });
 });
 
+app.post('/data', (req, res) => {
+  console.log("Dati ricevuti:", req.body);
+
+  res.json({
+    success: true
+  });
+});
+
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
