@@ -4,11 +4,12 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.send('KLIMA server online'));
 
-// IMPORTANTISSIMO: usare SOLO process.env.PORT
-const PORT = process.env.PORT;
-if (!PORT) {
-    console.error("Error: process.env.PORT non definita!");
-    process.exit(1);
-}
+app.get('/status', (req, res) => {
+  res.json({
+    server: "KLIMA",
+    status: "online"
+  });
+});
 
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
