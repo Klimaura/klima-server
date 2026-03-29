@@ -4,5 +4,11 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.send('KLIMA server online'));
 
-const PORT = process.env.PORT || 3000; // Railway assegna process.env.PORT
+// usa solo la porta fornita da Railway
+const PORT = process.env.PORT;
+if (!PORT) {
+    console.error("Error: PORT non definita in process.env");
+    process.exit(1); // chiude subito se non c'è porta
+}
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
