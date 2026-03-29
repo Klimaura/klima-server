@@ -1,6 +1,7 @@
 {
   "name": "klima-server",
   "version": "1.0.0",
+  "description": "Server cloud KLIMA per ESP32 e app",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
